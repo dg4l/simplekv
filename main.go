@@ -59,7 +59,7 @@ func main(){
                 log.Fatal(err)
             }
         case "delete":
-            delete_flag := flag.NewFlagSet("Delete", flag.ExitOnError)
+            delete_flag := flag.NewFlagSet("delete", flag.ExitOnError)
             key_flag := delete_flag.String("k", "", "key to delete")
             delete_flag.Parse(os.Args[2:])
             if *key_flag == ""{
