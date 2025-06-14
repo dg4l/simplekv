@@ -1,6 +1,6 @@
 # simplekv
 
-simple key-value store written in go in about 40 mins :)
+simple key-value store written in go
 
 uses 1 file per pair
 
