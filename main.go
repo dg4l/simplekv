@@ -58,6 +58,17 @@ func main(){
             if err != nil{
                 log.Fatal(err)
             }
+        case "delete":
+            delete_flag := flag.NewFlagSet("Delete", flag.ExitOnError)
+            key_flag := delete_flag.String("k", "", "key to delete")
+            delete_flag.Parse(os.Args[2:])
+            if *key_flag == ""{
+                os.Exit(1)
+            }
+            err := delete_key(*key_flag)
+            if err != nil{
+                log.Fatal(err)
+            }
         default:
             fmt.Println("no command given!")
             os.Exit(1)
