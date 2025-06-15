@@ -33,6 +33,10 @@ func main(){
     if err != nil && !os.IsExist(err){
         log.Fatal(err)
     }
+	if len(os.Args) < 2{
+		fmt.Println("expected create, fetch, or delete command.")
+		os.Exit(1)
+	}
     switch os.Args[1]{
         case "create":
             create_flag := flag.NewFlagSet("create", flag.ExitOnError) 
